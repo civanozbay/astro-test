@@ -1,8 +1,39 @@
 ---
 import about from "../pages/astro-test.mdx";
+
+const experiences = [
+  {
+    company: "Coachhub Gmbh",
+    title: "Software Developer in Test",
+    date: "2022 - Present",
+    description:
+      "Built and maintained a Cypress automation framework , improving regression reliability and accelerating release feedback. Reduced regression runtime and increased automated coverage by prioritizing critical flows and stabilizing suites. Designed and executed E2E test suites for high-impact user journeys, reducing regression escapes. (heavily on backend)",
+  },
+  {
+    company: "Vodafone",
+    title: "Software Test Automation Engineer",
+    date: "2021 - 2022",
+    description:
+      "Built and expanded mobile and web automation using Appium and Selenium, focusing on maintainability and stable regression coverage. Led quality validation for chatbot experiences, designing robust conversational scenarios aligned with evolving conversational design. Executed automated suites in a mobile device farm via Jenkins, enabling scalable cross-device coverage and faster feedback cycles.",
+  },
+  {
+    company: "Azul CRM",
+    title: "Software Test Automation Engineer",
+    date: "2020 - 2021",
+    description:
+      "Built and maintained Java/Selenium automation using POM + Data-Driven/Hybrid design with Maven. Implemented BDD with Cucumber and executed suites via Jenkins with clear reporting.",
+  },
+  {
+    company: "Hector Ware",
+    title: "QA Analyst",
+    date: "2019 - 2020",
+    description:
+      "Defined risk-based test scope and translated product requirements into testable conditions (clear acceptance criteria, edge cases, negative paths). Performed service-level validation (payload assertions, error handling) and supported end-to-end flows with SQL checks on relational databases.",
+  },
+];
 ---
 
-<main>
+<main class="mx-auto max-w-3xl px-4">
   <p>
     Software Developer in Test with 6 years of experience working in
     cross-functional teams on web and mobile products, operating at the
@@ -14,4 +45,26 @@ import about from "../pages/astro-test.mdx";
     Node.js stack, comfortable reading code, debugging issues, and shipping bug
     fixes to strengthen release quality.
   </p>
+
+  <h1 class="text-2xl font-bold mt-4 mb-4">Experiences</h1>
+  <ul>
+    {
+      experiences.map((experience) => (
+        <li>
+          <div>
+            <div class="flex justify-between">
+              <div class="font-semibold">
+                <p>{experience.company}</p>
+                <p>{experience.title}</p>
+              </div>
+                <div>
+                  <p>{experience.date}</p>
+                </div>
+            </div>
+            <p class="mb-4">{experience.description}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
 </main>
