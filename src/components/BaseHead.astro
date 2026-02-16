@@ -103,22 +103,15 @@ const criticalCSS = getPageCriticalCSS(Astro.url.pathname);
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const theme = storedTheme || (prefersDark ? "dark" : "light");
 
-  if (theme === "dark") {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
+  document.documentElement.setAttribute("data-theme", theme);
 
   // Listen for changes in system preference (only if no user preference is set)
   if (!storedTheme) {
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", (e) => {
-        if (e.matches) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
+        const next = e.matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", next);
       });
   }
 </script>

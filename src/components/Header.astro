@@ -155,8 +155,25 @@ const isActive = (path: string) => {
 
   toggleNav();
 
+  function setupThemeToggle() {
+    const themeBtn = document.querySelector("#theme-btn");
+    if (!themeBtn) return;
+
+    themeBtn.addEventListener("click", () => {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme") ?? "light";
+      const next = current === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      themeBtn.setAttribute("aria-label", next);
+    });
+  }
+
+  setupThemeToggle();
+
   // Runs on view transitions navigation
   document.addEventListener("astro:after-swap", () => {
     toggleNav();
+    setupThemeToggle();
   });
 </script>

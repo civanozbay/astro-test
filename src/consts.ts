@@ -28,7 +28,7 @@ export const SITE: Site = {
   profile: "https://civanozbay.github.io/astro-test/",
   desc: "AI-powered tools from Swift roots to web frontiers. Every commit lands on GitHub for you to fork & remix.",
   title: "Civan Özbay",
-  ogImage: "peter-avatar.jpg",
+  ogImage: "civan-avatar.jpg",
   lightAndDarkMode: true,
   postPerIndex: 10,
   postPerPage: 10,
@@ -62,14 +62,14 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: "GitHub",
   },
   {
-    href:"https://linkedin.com/in/civanozbay",
-    label:"Linkedin"
-  }
+    href: "https://linkedin.com/in/civanozbay",
+    label: "Linkedin",
+  },
 ];
 
 // Icon map for social media
 export const ICON_MAP: Record<string, string> = {
   GitHub: "github",
-  Linkedin:"linkedin",
+  Linkedin: "linkedin",
   Email: "mail",
 };
