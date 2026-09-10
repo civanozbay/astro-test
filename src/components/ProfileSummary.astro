@@ -1,6 +1,5 @@
 ---
 import Hr from "./Hr.astro";
-import IconRss from "../assets/icons/IconRss.svg";
 import { SOCIALS } from "../config";
 import Socials from "./Socials.astro";
 ---
@@ -8,9 +7,9 @@ import Socials from "./Socials.astro";
 <main id="main-content" data-layout="index">
   <section id="hero" class="pt-6 pb-4">
     <div class="flex flex-col sm:flex-row items-start gap-4">
-      <a href="/astro-test" class="block mx-auto sm:mx-0 group">
+      <a href="/" class="block mx-auto sm:mx-0 group">
         <img
-          src="/astro-test/civan-avatar.jpg"
+          src="/civan.jpeg"
           alt="Civan Özbay"
           class="w-40 h-40 rounded-full object-cover flex-shrink-0 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
         />
@@ -20,20 +19,6 @@ import Socials from "./Socials.astro";
           <h1 class="my-2 inline-block text-2xl font-bold sm:my-4 sm:text-3xl">
             Hi, I'm Civan Özbay.
           </h1>
-          <a
-            target="_blank"
-            href="/rss.xml"
-            class="inline-block"
-            aria-label="rss feed"
-            title="RSS Feed"
-          >
-            <IconRss
-              width={20}
-              height={20}
-              class="scale-125 stroke-accent stroke-3"
-            />
-            <span class="sr-only">RSS Feed</span>
-          </a>
         </div>
         <p>
           DEV/QA Engineer turning curiosity into testable, shippable code —

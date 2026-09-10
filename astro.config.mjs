@@ -5,7 +5,6 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
     site: "https://civanozbay.github.io",
-    base: "/astro-test",
     markdown: {
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes

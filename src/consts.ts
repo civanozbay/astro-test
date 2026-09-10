@@ -23,12 +23,12 @@ interface Site {
 
 // Site configuration
 export const SITE: Site = {
-  website: "https://civanozbay.github.io/astro-test/",
+  website: "https://civanozbay.github.io/",
   author: "Civan Özbay",
-  profile: "https://civanozbay.github.io/astro-test/",
+  profile: "https://civanozbay.github.io/",
   desc: "AI-powered tools from Swift roots to web frontiers. Every commit lands on GitHub for you to fork & remix.",
   title: "Civan Özbay",
-  ogImage: "civan-avatar.jpg",
+  ogImage: "civan.jpeg",
   lightAndDarkMode: true,
   postPerIndex: 10,
   postPerPage: 10,

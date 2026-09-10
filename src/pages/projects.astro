@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const projects: {
+  name: string;
+  description: string;
+  stack: string;
+  href?: string;
+}[] = [];
+---
+
+<Layout title="Projects" description="Projects by Civan Özbay.">
+  <main class="mx-auto max-w-3xl px-4">
+    <h1 class="text-2xl font-bold mt-4 mb-4">Projects</h1>
+    {
+      projects.length === 0 ? (
+        <p>Nothing here yet — projects are on the way.</p>
+      ) : (
+        <ul>
+          {projects.map((project) => (
+            <li>
+              <div>
+                <div class="flex justify-between">
+                  <div class="font-semibold">
+                    {project.href ? (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-accent"
+                      >
+                        {project.name}
+                      </a>
+                    ) : (
+                      <p>{project.name}</p>
+                    )}
+                  </div>
+                  <div>
+                    <p>{project.stack}</p>
+                  </div>
+                </div>
+                <p class="mb-4">{project.description}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </main>
+</Layout>
