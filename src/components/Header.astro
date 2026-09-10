@@ -14,6 +14,9 @@ const { pathname } = Astro.url;
 const currentPath =
   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 
+// About, ayri bir sayfa yerine anasayfayi gosteriyor; alt cizgi anasayfada kalsin.
+const isHome = currentPath === "/";
+
 const isActive = (path: string) => {
   const currentPathArray = currentPath.split("/").filter((p) => p.trim());
   const pathArray = path.split("/").filter((p) => p.trim());
@@ -69,9 +72,7 @@ const isActive = (path: string) => {
             </a>
           </li>
           <li class="col-span-2">
-            <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
-              About
-            </a>
+            <a href="/" class:list={{ "active-nav": isHome }}> About </a>
           </li>
           {
             SITE.showArchives && (
